@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="language_cn">中文</string>
+    <string name="language_en">ENGLISH</string>
+
+    <string name="change_language">Change Language</string>
+    <string name="app_name">HOH</string>
+    <string name="Password">Password</string>
+    <string name="Retype_Password">Retype Password</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="Phone_Number">Phone Number</string>
+    <string name="Create_your_account">Create your account</string>
+    <string name="Input_your_account">Input your account</string>
+
+    <string name="Dont_have_an_account">Don\'t have an account?</string>
+    <string name="Sign_in">Sign In</string>
+    <string name="Personal_data">Personal Data</string>
+    <string name="Country">Country</string>
+    <string name="Setting_Up">Setting Up</string>
+    <string name="Email">Email</string>
+    <string name="Avatar">Avatar</string>
+    <string name="Full_name">Full name</string>
+    <string name="Personal_center">Personal_Center</string>
+    <string name="Gender">Gender:</string>
+    <string name="Birt">Birt:</string>
+    <string name="Mob">Mob:</string>
+    <string name="Age">Age:</string>
+    <string name="Journey">Journey</string>
+    <string name="Information">Information</string>
+    <string name="Message">Message</string>
+    <string name="Viewed">Viewed</string>
+    <string name="Footstep">Footstep</string>
+    <string name="Comment">Comment</string>
+    <string name="Share">Share</string>
+    <string name="About">About</string>
+    <string name="Welfare">Welfare</string>
+    <string name="Recommend">Recommend</string>
+    <string name="Scenery">Scenery</string>
+    <string name="Museum">Museum</string>
+    <string name="Food">Food</string>
+    <string name="Liningup">Lining up</string>
+    <string name="OrderTime">Order time:</string>
+    <string name="MealNumber">Number of meals:</string>
+    <string name="MealTime">Meal time:</string>
+    <string name="Log_out">Log out</string>
+    <string name="Account_Security">Account And Security</string>
+    <string name="Message_Notifications">Message notifications</string>
+    <string name="Pricacy">Pricacy</string>
+    <string name="Common">Common</string>
+    <string name="Clear_cache">Clear cache</string>
+    <string name="DiagnosisNetwork">Diagnosis of network</string>
+    <string name="Feedback">Feedback</string>
+    <string name="About_us">About us</string>
+    <string name="Awesome_list">Awesome list</string>
+    <string name="Local_Specialty">Local Specialty</string>
+    <string name="Recommended_Restaurant">Recommended Restaurant</string>
+</resources>

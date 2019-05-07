@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/collection_main_lv_item_fl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/personal_main_block_bg">
+
+        <ImageView
+            android:id="@+id/collection_main_lv_item_bg_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:background="@drawable/fruit"
+            android:src="@drawable/fruit" />
+
+        <TextView
+            android:id="@+id/collection_main_lv_item_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="10dp"
+            android:text="小王水果店"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/collection_main_lv_item_local_iv"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/collection_local" />
+
+        <TextView
+            android:id="@+id/collection_main_lv_item_local_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:text="留和路318号"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <ImageButton
+            android:id="@+id/collection_main_lv_item_collected_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:elevation="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/collection_item_collected" />
+
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_personal"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="个人" />
+
+    <item
+        android:id="@+id/menu_item_list"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="清单" />
+
+    <item
+        android:id="@+id/menu_item_map"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="地图" />
+    <item
+        android:id="@+id/menu_item_collection"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="收藏" />
+
+    <item
+        android:id="@+id/menu_item_lineup"
+        android:icon="@drawable/ic_assignment_ind_black_24dp"
+        android:title="排队" />
+
+</menu>

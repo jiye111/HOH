@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/lineup_main_item_bg_rl"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/lineup_main_item_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="小王面馆"
+            android:textColor="@color/text_color"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/lineup_main_item_local_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/lineup_main_item_name_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/lineup_local" />
+
+        <TextView
+            android:id="@+id/lineup_main_item_local_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineup_main_item_name_tv"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/lineup_main_item_local_icon"
+            android:text="文三路22号"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/lineup_main_item_orderDetail_rl"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/lineup_main_item_local_icon"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/lineup_main_item_mealNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/MealNumber"
+                android:textColor="@color/text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/lineup_main_item_mealNumber_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/lineup_main_item_mealNumber"
+                android:text="2"
+                android:textColor="@color/text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/lineup_main_item_mealTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineup_main_item_mealNumber"
+                android:layout_marginLeft="10dp"
+                android:text="@string/MealTime"
+                android:textColor="@color/text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/lineup_main_item_mealTime_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineup_main_item_mealNumber"
+                android:layout_toRightOf="@id/lineup_main_item_mealTime"
+                android:text="2019.03.12 12:30"
+                android:textSize="12sp" />
+            <!--<ImageView-->
+            <!--android:id="@+id/lineup_main_item_downArraw_iv"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:src="@mipmap/ic_launcher_round"-->
+            <!--android:layout_toRightOf="@id/lineup_main_item_mealTime_tv"-->
+            <!--android:layout_height="40dp" />-->
+        </RelativeLayout>
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="0.5dp"
+            android:background="#dfd3d3"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/lineup_main_item_orderDetail_rl" />
+
+        <TextView
+            android:id="@+id/lineup_main_item_orderTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineup_main_item_orderDetail_rl"
+            android:layout_marginLeft="80dp"
+            android:text="@string/OrderTime"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/lineup_main_item_orderTime_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineup_main_item_orderDetail_rl"
+            android:layout_toRightOf="@id/lineup_main_item_orderTime"
+            android:text="2019.4.4 9:20"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/lineup_main_item_img_iv"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="fitXY"
+            android:layout_toRightOf="@+id/lineup_main_item_orderDetail_rl"
+            android:src="@mipmap/ic_launcher_round" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toolbar_bg"
+    tools:context=".ui.fragment.collection.CollectionFragment"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/collection_main_userImg_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/collection_main_userName_tv"
+            android:layout_width="wrap_content"
+            android:text="Iron Man"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/collection_main_userImg_iv"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/collection_main_userCity_tv"
+            android:layout_width="wrap_content"
+            android:text="Hang Zhou"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp"
+            android:layout_below="@id/collection_main_userName_tv"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/collection_main_userImg_iv"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/personal_main_block_bg"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/collection_main_scenery_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center" />
+
+        <ImageButton
+            android:id="@+id/collection_main_museum_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="35dp"
+            android:layout_toRightOf="@id/collection_main_scenery_btn" />
+
+        <ImageButton
+            android:id="@+id/collection_main_food_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="35dp"
+            android:layout_toRightOf="@id/collection_main_museum_btn" />
+
+        <TextView
+            android:id="@+id/collection_main_scenery_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/collection_main_food_btn"
+            android:layout_marginLeft="15dp"
+            android:text="@string/Scenery"
+            android:textColor="@color/text_color" />
+
+        <TextView
+            android:id="@+id/collection_main_museum_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/collection_main_food_btn"
+            android:layout_centerHorizontal="true"
+            android:text="@string/Museum"
+            android:textColor="@color/text_color" />
+
+        <TextView
+            android:id="@+id/collection_main_food_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/collection_main_food_btn"
+            android:layout_marginLeft="205dp"
+            android:text="@string/Food"
+            android:textColor="@color/text_color" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/collection_main_type_tv"
+        android:layout_width="wrap_content"
+        android:text="@string/Scenery"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/collection_main_lv"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"></ListView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/login_signup_bg_ll"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.login.SignupActivity">
+
+    <Button
+        android:id="@+id/login_signup_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"
+        />
+
+    <Button
+        android:id="@+id/login_signup_change_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="@string/change_language"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Create_your_account"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+    <EditText
+        android:id="@+id/login_signup_user_et"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_signup_et"
+        android:gravity="center"
+        android:text="@string/Phone_Number"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/login_signup_password_et"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_signup_et"
+        android:gravity="center"
+        android:text="@string/Password"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/login_signup_repassword_et"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_signup_et"
+        android:gravity="center"
+        android:text="@string/Retype_Password"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/login_signup_btn"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_signup_btn"
+        android:gravity="center"
+        android:text="@string/Sign_up"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/login_bg" />
+
+
+</LinearLayout>

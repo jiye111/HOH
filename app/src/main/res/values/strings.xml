@@ -1,0 +1,57 @@
+<resources>
+
+    <string name="language_cn">中文</string>
+    <string name="language_en">ENGLISH</string>
+
+    <string name="change_language">切换语言</string>
+    <string name="app_name">HOH</string>
+    <string name="Password">密码</string>
+    <string name="Retype_Password">重新输入密码</string>
+    <string name="Sign_up">注册</string>
+    <string name="Phone_Number">电话号码</string>
+    <string name="Phone_Number_">电话号码：</string>
+    <string name="Email">电子邮箱：</string>
+    <string name="Create_your_account">创建你的账号</string>
+    <string name="Input_your_account">输入你的账号</string>
+    <string name="Dont_have_an_account">还没有账号？</string>
+    <string name="Sign_in">登陆</string>
+    <string name="Avatar">用户：</string>
+    <string name="Country">国家：</string>
+    <string name="Full_name">用户名：</string>
+    <string name="Personal_data">个人信息</string>
+    <string name="Setting_Up">设置</string>
+    <string name="Personal_center">个人中心</string>
+    <string name="Gender">性别：</string>
+    <string name="Birt">生日：</string>
+    <string name="Mob">电话：</string>
+    <string name="Age">年龄：</string>
+    <string name="Journey">旅行</string>
+    <string name="Information">个人信息</string>
+    <string name="Message">消息</string>
+    <string name="Viewed">看过</string>
+    <string name="Footstep">足迹</string>
+    <string name="Comment">评论</string>
+    <string name="Share">分享</string>
+    <string name="About">关于</string>
+    <string name="Welfare">福利</string>
+    <string name="Recommend">推荐</string>
+    <string name="Scenery">景点</string>
+    <string name="Museum">博物馆</string>
+    <string name="Food">美食</string>
+    <string name="Liningup">排队</string>
+    <string name="OrderTime">预定时间：</string>
+    <string name="MealNumber">用餐人数：</string>
+    <string name="MealTime">预约时间：</string>
+    <string name="Log_out">注销</string>
+    <string name="Account_Security">账户安全设置</string>
+    <string name="Message_Notifications">消息提醒</string>
+    <string name="Pricacy">政策</string>
+    <string name="Common">公共</string>
+    <string name="Clear_cache">清除缓存</string>
+    <string name="DiagnosisNetwork">网络诊断</string>
+    <string name="Feedback">反馈</string>
+    <string name="About_us">关于我们</string>
+    <string name="Awesome_list">爆款清单</string>
+    <string name="Local_Specialty">本地特色</string>
+    <string name="Recommended_Restaurant">特色餐厅</string>
+</resources>

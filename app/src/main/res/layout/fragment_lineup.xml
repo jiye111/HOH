@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.collection.CollectionFragment"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/toolbar_bg">
+
+        <TextView
+            android:id="@+id/lineup_main_middle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:maxEms="10"
+            android:singleLine="true"
+            android:text="@string/Liningup"
+            android:textColor="@color/text_color"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/lineup_main_right_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:visibility="visible" />
+    </RelativeLayout>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#dfd3d3"
+            />
+        <ListView
+            android:id="@+id/lineup_main_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+
+
+</FrameLayout>
+
+
+</LinearLayout>

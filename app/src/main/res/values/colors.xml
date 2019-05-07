@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlue">#29A1F7</color>
+    <color name="colorBlue2">#29A1F7</color><!--底部图标颜色-->
+    <color name="md_grey_700">#616161</color>
+    <color name="transparency">#00ffffff</color><!--透明-->
+    <color name="login_bg">#dfd3d3</color><!--登陆界面下方灰色区域-->
+    <color name="toolbar_bg">#e2d7d7</color><!--标题栏背景色-->
+    <color name="text_color">#7b7575</color><!--字体颜色-->
+    <color name="personal_main_bg_center">#faf2f2</color><!--个人页面渐变中间颜色-->
+    <color name="list_main_search_bg">#f5f0f0</color><!--清单界面搜索框背景-->
+</resources>
