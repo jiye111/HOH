@@ -1,12 +1,13 @@
 package com.example.zhang.hoh.ui.fragment.list;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -17,17 +18,22 @@ import com.example.sdk.base.BasePresenter;
 import com.example.sdk.base.fragment.BaseMVPCompatFragment;
 import com.example.sdk.utils.AppUtils;
 import com.example.sdk.utils.BitmapUtils;
-import com.example.sdk.utils.GlideUtils;
 import com.example.zhang.hoh.R;
 import com.example.zhang.hoh.adapter.list.listAdapter;
+import com.example.zhang.hoh.adapter.list.listFoodLocalAdapter;
+import com.example.zhang.hoh.adapter.list.listFoodRecommendAdapter;
 import com.example.zhang.hoh.bean.list.listBottomInRVBean;
 import com.example.zhang.hoh.contract.list.ListContract;
 import com.example.zhang.hoh.presenter.list.ListPresenter;
-import com.example.zhang.hoh.ui.fragment.personal.PersonalFragment;
-import com.ryan.rv_gallery.GalleryRecyclerView;
+import com.example.zhang.hoh.ui.activity.list.ListFoodActivity;
+import com.example.zhang.hoh.ui.activity.list.MuseumDetailActivity;
+import com.example.zhang.hoh.ui.activity.list.SceneryDetailActivity;
+import com.example.zhang.hoh.utils.GlideImageLoader;
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
 import com.yarolegovich.discretescrollview.transform.Pivot;
 import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +68,12 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
     ImageView bottomInFoodLocalMoreIv;
     @BindView(R.id.list_main_bottom_in_food_recommend_more)
     ImageView bottomInFoodrecommendMoreIv;
+    @BindView(R.id.list_main_bottom_in_food_awesome_banner)
+    Banner bottomInFoodBanner;
+    @BindView(R.id.list_main_bottom_in_food_local_lv)
+    RecyclerView bottomInFoodLocalRl;
+    @BindView(R.id.list_main_bottom_in_food_recommend_lv)
+    RecyclerView bottomInFoodRecommendRl;
 
 
     @OnClick(R.id.list_scenery_bg)
@@ -88,17 +100,24 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
     void toFood() {
         bottomNormalLl.setVisibility(View.GONE);
         topNormalLl.setVisibility(View.GONE);
-        bottomInLl.setVisibility(View.VISIBLE);
+        bottomInFoodLl.setVisibility(View.VISIBLE);
         topInLl.setVisibility(View.VISIBLE);
 
-        showRecyclerView(3);
+        showFoodView();
     }
+
 
     @OnClick(R.id.list_main_topll_in)
     void backToMain() {
+        //food做特殊处理
+        if (bottomInFoodLl.getVisibility() == View.VISIBLE) {
+            bottomInFoodLl.setVisibility(View.GONE);
+            bottomInFoodBanner.stopAutoPlay();
+        } else {
+            bottomInLl.setVisibility(View.GONE);
+        }
         bottomNormalLl.setVisibility(View.VISIBLE);
         topNormalLl.setVisibility(View.VISIBLE);
-        bottomInLl.setVisibility(View.GONE);
         topInLl.setVisibility(View.GONE);
         //释放adapter
         //detailRv.setAdapter(null);
@@ -106,7 +125,8 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
 
     private List<listBottomInRVBean> sceneryDataList;
     private List<listBottomInRVBean> museumDataList;
-    private List<listBottomInRVBean> foodDataList;
+    private List<listBottomInRVBean> foodLocalDataList;
+    private List<listBottomInRVBean> foodRecommendDataList;
     private View mView;
 
 
@@ -151,55 +171,40 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
         museumDataList.add(bean3);
 
         sceneryDataList = new ArrayList<>();
-         bean1 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
+        bean1 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
                 , R.drawable.list_scenery_two, true);
-         bean2 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
+        bean2 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
                 , R.drawable.list_scenery_two, false);
-         bean3 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
+        bean3 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
                 , R.drawable.list_scenery_two, false);
         sceneryDataList.add(bean1);
         sceneryDataList.add(bean2);
         sceneryDataList.add(bean3);
 
-        foodDataList = new ArrayList<>();
-        bean1 = new listBottomInRVBean("Zhejiang Museum", "WestLake 43"
-                , R.drawable.list_food_two, true);
-        bean2 = new listBottomInRVBean("Zhejiang Museum", "WestLake 43"
+        foodLocalDataList = new ArrayList<>();
+        bean1 = new listBottomInRVBean("meishi 1", "WestLake 43"
+                , R.drawable.list_food_one, true);
+        bean2 = new listBottomInRVBean("meishi 2", "WestLake 43"
                 , R.drawable.list_food_two, false);
-        bean3 = new listBottomInRVBean("Zhejiang Museum", "WestLake 43"
+        bean3 = new listBottomInRVBean("meishi 3", "WestLake 43"
+                , R.drawable.list_food_three, false);
+        foodLocalDataList.add(bean1);
+        foodLocalDataList.add(bean2);
+        foodLocalDataList.add(bean3);
+
+        foodRecommendDataList = new ArrayList<>();
+        bean1 = new listBottomInRVBean("meishi 1", null
+                , R.drawable.list_food_three, false);
+        bean2 = new listBottomInRVBean("meishi 2", null
                 , R.drawable.list_food_two, false);
-        foodDataList.add(bean1);
-        foodDataList.add(bean2);
-        foodDataList.add(bean3);
+        bean3 = new listBottomInRVBean("meishi 3", null
+                , R.drawable.list_food_three, false);
+        foodRecommendDataList.add(bean1);
+        foodRecommendDataList.add(bean2);
+        foodRecommendDataList.add(bean3);
 
     }
 
-    private void showRecyclerView(int pos) {
-        listAdapter adapter=null;
-        switch (pos) {
-            case 1://风景
-                adapter = new listAdapter(AppUtils.getContext(), museumDataList);
-                break;
-            case 2://博物馆
-                adapter = new listAdapter(AppUtils.getContext(), sceneryDataList);
-                break;
-            case 3://食物
-                adapter = new listAdapter(AppUtils.getContext(), foodDataList);
-                break;
-            default:
-                break;
-        }
-        //detailRv.setLayoutManager(new LinearLayoutManager(AppUtils.getContext(), LinearLayoutManager.HORIZONTAL, false));
-        detailRv.setAdapter(adapter);
-        detailRv.setOffscreenItems(10);
-        detailRv.setItemTransformer(new ScaleTransformer.Builder()
-                 .setMaxScale(1.05f)
-                .setMinScale(0.95f)
-                .setPivotX(Pivot.X.CENTER)
-                .setPivotY(Pivot.Y.BOTTOM)
-                .build());
-
-    }
 
     private void initBg() {
         RoundedCorners roundedCorners = new RoundedCorners(50);
@@ -225,4 +230,85 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
                 .apply(RequestOptions.bitmapTransform(roundedCorners))
                 .into(foodIv);
     }
+
+    private void showFoodView() {
+        //展示banner
+        bottomInFoodBanner.setImageLoader(new GlideImageLoader());
+        //设置图片集合
+        List<Integer> imageList = new ArrayList<>();
+        imageList.add(R.drawable.list_food_one);
+        imageList.add(R.drawable.list_food_three);
+        imageList.add(R.drawable.list_food_one);
+        bottomInFoodBanner.setImages(imageList);
+        //设置轮播时间
+        bottomInFoodBanner.setDelayTime(3000);
+        //指示器
+        bottomInFoodBanner.setIndicatorGravity(BannerConfig.CENTER);
+        bottomInFoodBanner.start();
+
+        //加载下方两个view
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(AppUtils.getContext(),
+                LinearLayoutManager.HORIZONTAL,false);
+        listFoodLocalAdapter adapter=new listFoodLocalAdapter(AppUtils.getContext(),foodLocalDataList);
+        bottomInFoodLocalRl.setLayoutManager(layoutManager);
+        bottomInFoodLocalRl.setAdapter(adapter);
+
+        RecyclerView.LayoutManager layoutManager2=new LinearLayoutManager(AppUtils.getContext(),
+                LinearLayoutManager.HORIZONTAL,false);
+        listFoodRecommendAdapter adapter2=new listFoodRecommendAdapter(AppUtils.getContext(),foodLocalDataList);
+        bottomInFoodRecommendRl.setLayoutManager(layoutManager2);
+        bottomInFoodRecommendRl.setAdapter(adapter2);
+
+        adapter.setClickListener(new listFoodLocalAdapter.ItemClickListener() {
+            @Override
+            public void onItemClickListentr(View view, int pos) {
+                Intent intent=new Intent(AppUtils.getContext(), ListFoodActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void showRecyclerView(int pos) {
+        listAdapter adapter = null;
+        switch (pos) {
+            case 1://风景
+                adapter = new listAdapter(AppUtils.getContext(), museumDataList);
+                adapter.setClickListener(new listAdapter.ItemClickListener() {
+                    @Override
+                    public void onItemClickListentr(View view, int pos) {
+                        Intent intent=new Intent(AppUtils.getContext(), SceneryDetailActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
+            case 2://博物馆
+                adapter = new listAdapter(AppUtils.getContext(), sceneryDataList);
+                adapter.setClickListener(new listAdapter.ItemClickListener() {
+                    @Override
+                    public void onItemClickListentr(View view, int pos) {
+                        Intent intent=new Intent(AppUtils.getContext(), MuseumDetailActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                break;
+            case 3://
+              //  adapter = new listAdapter(AppUtils.getContext(), foodDataList);
+                break;
+            default:
+                break;
+        }
+        //detailRv.setLayoutManager(new LinearLayoutManager(AppUtils.getContext(), LinearLayoutManager.HORIZONTAL, false));
+        detailRv.setAdapter(adapter);
+        detailRv.setOffscreenItems(10);
+        detailRv.setItemTransformer(new ScaleTransformer.Builder()
+                .setMaxScale(1.05f)
+                .setMinScale(0.95f)
+                .setPivotX(Pivot.X.CENTER)
+                .setPivotY(Pivot.Y.BOTTOM)
+                .build());
+
+
+
+    }
+
 }

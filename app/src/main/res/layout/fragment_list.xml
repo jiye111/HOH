@@ -114,7 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -205,6 +205,7 @@
         android:id="@+id/list_main_bottom_in_food"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <LinearLayout
@@ -226,6 +227,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/list_food_more" />
 
         </LinearLayout>
@@ -235,12 +238,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_width="match_parent"
-            android:layout_height="120dp"></com.youth.banner.Banner>
+            android:layout_height="150dp"></com.youth.banner.Banner>
 
         <LinearLayout
             android:id="@+id/list_main_bottom_in_food_local"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
             android:orientation="horizontal">
 
             <TextView
@@ -256,18 +260,20 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
                 android:background="@drawable/list_food_more" />
 
         </LinearLayout>
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/list_main_bottom_in_food_local_lv"
             android:layout_width="match_parent"
-            android:layout_height="100dp"></ListView>
+            android:layout_height="130dp"></android.support.v7.widget.RecyclerView>
 
         <LinearLayout
             android:id="@+id/list_main_bottom_in_food_recommend"
             android:layout_width="match_parent"
+            android:layout_marginTop="2dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -288,10 +294,10 @@
 
         </LinearLayout>
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:id="@+id/list_main_bottom_in_food_recommend_lv"
             android:layout_width="match_parent"
-            android:layout_height="120dp"></ListView>
+            android:layout_height="130dp"></android.support.v7.widget.RecyclerView>
 
 
     </LinearLayout>

@@ -78,6 +78,16 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
                     .load(R.drawable.collection_item_uncollected)
                     .into(viewHolder.isCollected);
         }
+
+        if (mListener!=null){
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position=viewHolder.getLayoutPosition();
+                    mListener.onItemClickListentr(viewHolder.itemView,position);
+                }
+            });
+        }
     }
 
     @Override
@@ -85,5 +95,14 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.ViewHolder> {
         return mList.size();
     }
 
+    public ItemClickListener mListener;
+
+    public interface  ItemClickListener{
+        void onItemClickListentr(View view,int pos);
+    }
+
+    public void setClickListener(ItemClickListener itemClickListener){
+        this.mListener=itemClickListener;
+    };
 
 }

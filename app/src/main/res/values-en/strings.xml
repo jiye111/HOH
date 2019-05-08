@@ -28,6 +28,7 @@
     <string name="Age">Age:</string>
     <string name="Journey">Journey</string>
     <string name="Information">Information</string>
+    <string name="information">Information</string>
     <string name="Message">Message</string>
     <string name="Viewed">Viewed</string>
     <string name="Footstep">Footstep</string>
@@ -53,6 +54,14 @@
     <string name="Feedback">Feedback</string>
     <string name="About_us">About us</string>
     <string name="Awesome_list">Awesome list</string>
+    <string name="Awesome_Place">Awesome Place</string>
     <string name="Local_Specialty">Local Specialty</string>
     <string name="Recommended_Restaurant">Recommended Restaurant</string>
+    <string name="Local">Local</string>
+    <string name="Introduce">Introduce</string>
+    <string name="Sight">Sight</string>
+    <string name="Parking">Parking</string>
+    <string name="Service">Service</string>
+    <string name="Open_Time">Opening time</string>
+    <string name="All_Day">All day</string>
 </resources>

@@ -19,6 +19,18 @@
         <activity android:name=".ui.activity.login.SignupActivity" >
 
         </activity>
+
+        <activity android:name=".ui.activity.list.ListFoodActivity" >
+
+        </activity>
+        <activity android:name=".ui.activity.list.SceneryDetailActivity" >
+
+        </activity>
+
+        <activity android:name=".ui.activity.list.MuseumDetailActivity" >
+
+        </activity>
+
         <activity android:name=".ui.activity.login.SigninActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
