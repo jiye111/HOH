@@ -55,6 +55,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -70,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/personal_main_userImg_iv"
-                android:text="UserName"
+                android:text="王林"
                 android:textColor="@color/text_color"
                 android:textSize="20sp" />
 
@@ -82,7 +83,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/personal_main_userImg_iv"
                 android:alpha="0.8"
-                android:text="UserCity"
+                android:text="杭州"
                 android:textColor="@color/text_color"
                 android:textSize="15sp" />
 
@@ -90,6 +91,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content">
 
             <TextView
@@ -184,7 +186,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/personal_main_block_bg"
             android:orientation="horizontal">
 
@@ -250,7 +252,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="30dp">
 
             <LinearLayout
                 android:id="@+id/personal_main_message_ll"

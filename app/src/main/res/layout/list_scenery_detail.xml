@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/list_scenery_detail_bg"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@color/toolbar_bg" />
-
-    <ImageButton
-        android:id="@+id/list_scenery_detail_back_btn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/left_arraw"
-        android:padding="10dp"
-        android:visibility="visible" />
-
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/list_scenery_detail_bg"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:background="@color/toolbar_bg" />
+
+        <ImageButton
+            android:id="@+id/list_scenery_detail_back_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/left_arraw"
+            android:padding="10dp"
+            android:visibility="visible" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="West Lake"
+                    android:text="西湖"
                     android:textSize="25sp"
 
                     android:textStyle="bold" />
@@ -60,7 +62,7 @@
                     android:layout_below="@+id/list_scenery_detail_name_tv"
                     android:layout_marginTop="2dp"
                     android:layout_toRightOf="@+id/list_scenery_detail_local_iv"
-                    android:text="West Lake District,Gushan Road" />
+                    android:text="杭州市西湖区龙井路1号" />
 
                 <ImageView
                     android:id="@+id/list_scenery_detail_collection_iv"
@@ -80,11 +82,10 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/toolbar_bg" />
+           <com.example.zhang.hoh.widget.ConflictAMap
+               android:id="@+id/list_scenery_map"
+               android:layout_width="match_parent"
+               android:layout_height="150dp"></com.example.zhang.hoh.widget.ConflictAMap>
 
             <View
                 android:layout_width="match_parent"
@@ -92,37 +93,6 @@
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dottedline" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/Introduce"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/information"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/Sight"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -209,11 +179,12 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
                 android:layout_height="150dp"></com.youth.banner.Banner>
 
 
         </LinearLayout>
-    </ScrollView>
 
+    </FrameLayout>
 
-</FrameLayout>
+</ScrollView>

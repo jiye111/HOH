@@ -9,11 +9,11 @@
     android:orientation="vertical"
     tools:context=".ui.activity.login.SignupActivity">
 
-    <Button
-        android:id="@+id/login_signup_back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="返回"
+    <ImageView
+        android:id="@+id/login_signup_back_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/left_arraw"
         />
 
     <Button
@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:visibility="gone"
         android:text="@string/change_language"
         />
 

@@ -70,7 +70,7 @@ public class collectionListViewAdapter extends BaseAdapter {
         //写值
         Glide.with(mContext)
                 .load(mList.get(i).getBg())
-                 .transform(new com.bumptech.glide.load.resource.bitmap.CenterCrop(), new com.example.sdk.utils.GlideUtils.GlideRoundTransform(mContext,50))
+                 .transform(new com.bumptech.glide.load.resource.bitmap.CenterCrop(), new com.example.sdk.utils.GlideUtils.GlideRoundTransform(mContext,10))
                 .into(viewHolder.itemBg);//背景
 
 

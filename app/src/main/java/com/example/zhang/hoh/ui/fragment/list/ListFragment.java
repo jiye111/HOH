@@ -18,6 +18,7 @@ import com.example.sdk.base.BasePresenter;
 import com.example.sdk.base.fragment.BaseMVPCompatFragment;
 import com.example.sdk.utils.AppUtils;
 import com.example.sdk.utils.BitmapUtils;
+import com.example.sdk.utils.DisplayUtil;
 import com.example.zhang.hoh.R;
 import com.example.zhang.hoh.adapter.list.listAdapter;
 import com.example.zhang.hoh.adapter.list.listFoodLocalAdapter;
@@ -160,23 +161,23 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
 
     private void initRvData() {
         museumDataList = new ArrayList<>();
-        listBottomInRVBean bean1 = new listBottomInRVBean("Zhejiang Museum", "WestLake 43"
-                , R.drawable.list_museum_two, true);
-        listBottomInRVBean bean2 = new listBottomInRVBean("Zhejiang Museum", "WestLake 43"
-                , R.drawable.list_museum_two, false);
-        listBottomInRVBean bean3 = new listBottomInRVBean("Zhejiang Museum", "WestLake 43"
-                , R.drawable.list_museum_two, false);
+        listBottomInRVBean bean1 = new listBottomInRVBean("浙江省博物馆", "杭州市西湖区孤山路25号"
+                , R.drawable.list_museum_gushan, true);
+        listBottomInRVBean bean2 = new listBottomInRVBean("杭州西湖博物馆", "杭州市南山路89号"
+                , R.drawable.list_museum_xihu, false);
+        listBottomInRVBean bean3 = new listBottomInRVBean("浙江省博物馆", "杭州市西湖区孤山路25号"
+                , R.drawable.list_museum_gushan, false);
         museumDataList.add(bean1);
         museumDataList.add(bean2);
         museumDataList.add(bean3);
 
         sceneryDataList = new ArrayList<>();
-        bean1 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
-                , R.drawable.list_scenery_two, true);
-        bean2 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
+        bean1 = new listBottomInRVBean("西湖", "杭州市西湖区龙井路1号"
+                , R.drawable.list_scenery_xihu, true);
+        bean2 = new listBottomInRVBean("千岛湖", "杭州市淳安县境内"
                 , R.drawable.list_scenery_two, false);
-        bean3 = new listBottomInRVBean("Qiandao Pool", "WestLake 43"
-                , R.drawable.list_scenery_two, false);
+        bean3 = new listBottomInRVBean("西湖", "杭州市西湖区龙井路1号"
+                , R.drawable.list_scenery_xihu, false);
         sceneryDataList.add(bean1);
         sceneryDataList.add(bean2);
         sceneryDataList.add(bean3);
@@ -207,7 +208,7 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
 
 
     private void initBg() {
-        RoundedCorners roundedCorners = new RoundedCorners(50);
+        RoundedCorners roundedCorners = new RoundedCorners(DisplayUtil.dip2px(mContext,10));
         Bitmap sceneryBitmap = BitmapUtils.decodeSampledBitmapFromResoure(getResources(), R.drawable.list_scenery_one
                 , 400, 300);
         Glide.with(this)
@@ -236,15 +237,23 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
         bottomInFoodBanner.setImageLoader(new GlideImageLoader());
         //设置图片集合
         List<Integer> imageList = new ArrayList<>();
-        imageList.add(R.drawable.list_food_one);
-        imageList.add(R.drawable.list_food_three);
-        imageList.add(R.drawable.list_food_one);
+        imageList.add(R.drawable.list_food_banner_one);
+        imageList.add(R.drawable.list_food_banner_two);
+        imageList.add(R.drawable.list_food_banner_three);
         bottomInFoodBanner.setImages(imageList);
         //设置轮播时间
         bottomInFoodBanner.setDelayTime(3000);
         //指示器
         bottomInFoodBanner.setIndicatorGravity(BannerConfig.CENTER);
         bottomInFoodBanner.start();
+        //调转到网红餐厅
+        bottomInFoodBanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(AppUtils.getContext(), ListFoodActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //加载下方两个view
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(AppUtils.getContext(),
@@ -259,20 +268,20 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
         bottomInFoodRecommendRl.setLayoutManager(layoutManager2);
         bottomInFoodRecommendRl.setAdapter(adapter2);
 
-        adapter.setClickListener(new listFoodLocalAdapter.ItemClickListener() {
-            @Override
-            public void onItemClickListentr(View view, int pos) {
-                Intent intent=new Intent(AppUtils.getContext(), ListFoodActivity.class);
-                startActivity(intent);
-            }
-        });
+//        adapter.setClickListener(new listFoodLocalAdapter.ItemClickListener() {
+//            @Override
+//            public void onItemClickListentr(View view, int pos) {
+//                Intent intent=new Intent(AppUtils.getContext(), ListFoodActivity.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void showRecyclerView(int pos) {
         listAdapter adapter = null;
         switch (pos) {
             case 1://风景
-                adapter = new listAdapter(AppUtils.getContext(), museumDataList);
+                adapter = new listAdapter(AppUtils.getContext(), sceneryDataList);
                 adapter.setClickListener(new listAdapter.ItemClickListener() {
                     @Override
                     public void onItemClickListentr(View view, int pos) {
@@ -282,7 +291,7 @@ public class ListFragment extends BaseMVPCompatFragment<ListContract.ListPresent
                 });
                 break;
             case 2://博物馆
-                adapter = new listAdapter(AppUtils.getContext(), sceneryDataList);
+                adapter = new listAdapter(AppUtils.getContext(), museumDataList);
                 adapter.setClickListener(new listAdapter.ItemClickListener() {
                     @Override
                     public void onItemClickListentr(View view, int pos) {

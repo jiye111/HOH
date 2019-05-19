@@ -2,11 +2,13 @@ package com.example.zhang.hoh.ui.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.example.sdk.AppManager;
 import com.example.sdk.base.activity.BaseCompatActivity;
@@ -22,6 +24,7 @@ import com.example.zhang.hoh.ui.fragment.personal.PersonalFragment;
 import com.example.zhang.hoh.utils.StatusBarUtil;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import me.yokeyword.fragmentation.SupportFragment;
 
 
@@ -30,6 +33,59 @@ public class MainActivity  extends BaseCompatActivity {
     FrameLayout flContainer;
     @BindView(R.id.bnv_bar_main)
     BottomNavigationView bottomNavigationView;
+    @BindView(R.id.main_personal_tab)
+    LinearLayout tabPersonal;
+    @BindView(R.id.main_list_tab)
+    LinearLayout tabList;
+    @BindView(R.id.main_map_tab)
+    LinearLayout tabMap;
+    @BindView(R.id.main_collection_tab)
+    LinearLayout tabCollection;
+    @BindView(R.id.main_lineup_tab)
+    LinearLayout tabLineup;
+
+    @OnClick({R.id.main_collection_tab,R.id.main_lineup_tab,R.id.main_list_tab,R.id.main_map_tab,
+              R.id.main_personal_tab})
+    void toFragment(LinearLayout tab){
+        switch (tab.getId()){
+            case R.id.main_personal_tab:
+                setAllTabColor();
+                tabPersonal.setBackgroundColor(ContextCompat.getColor(mContext, R.color.white));
+                showHideFragment(mFragments[FIRST]);
+                break;
+            case R.id.main_list_tab:
+                setAllTabColor();
+                tabList.setBackgroundColor(ContextCompat.getColor(mContext, R.color.white));
+                showHideFragment(mFragments[SECOND]);
+                break;
+            case R.id.main_map_tab:
+                setAllTabColor();
+                tabMap.setBackgroundColor(ContextCompat.getColor(mContext, R.color.white));
+                showHideFragment(mFragments[THIRD]);
+                break;
+            case R.id.main_collection_tab:
+                setAllTabColor();
+                tabCollection.setBackgroundColor(ContextCompat.getColor(mContext, R.color.white));
+                showHideFragment(mFragments[FOURTH]);
+                break;
+            case R.id.main_lineup_tab:
+                setAllTabColor();
+                tabLineup.setBackgroundColor(ContextCompat.getColor(mContext, R.color.white));
+                showHideFragment(mFragments[FIFTH]);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void setAllTabColor() {
+        tabPersonal.setBackgroundColor(ContextCompat.getColor(mContext, R.color.toolbar_bg));
+        tabLineup.setBackgroundColor(ContextCompat.getColor(mContext, R.color.toolbar_bg));
+        tabList.setBackgroundColor(ContextCompat.getColor(mContext, R.color.toolbar_bg));
+        tabMap.setBackgroundColor(ContextCompat.getColor(mContext, R.color.toolbar_bg));
+        tabCollection.setBackgroundColor(ContextCompat.getColor(mContext, R.color.toolbar_bg));
+    }
+
     public static final int FIRST = 0;
     public static final int SECOND = 1;
     public static final int THIRD = 2;
@@ -70,44 +126,44 @@ public class MainActivity  extends BaseCompatActivity {
             mFragments[FOURTH] = findFragment(CollectionFragment.class);
             mFragments[FIFTH] = findFragment(LineupFragment.class);
         }
+        tabMap.performClick();
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView
-                .OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.menu_item_personal:
-                        showHideFragment(mFragments[FIRST]);
-                        break;
-                    case R.id.menu_item_list:
-                        showHideFragment(mFragments[SECOND]);
-                        break;
-                    case R.id.menu_item_map:
-                        showHideFragment(mFragments[THIRD]);
-                        break;
-                    case R.id.menu_item_collection:
-                        showHideFragment(mFragments[FOURTH]);
-                        break;
-                    case R.id.menu_item_lineup:
-                        showHideFragment(mFragments[FIFTH]);
-                        break;
-                }
-                return true;
-            }
-        });
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView
+//                .OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                switch (item.getItemId()) {
+//                    case R.id.menu_item_personal:
+//                        showHideFragment(mFragments[FIRST]);
+//                        break;
+//                    case R.id.menu_item_list:
+//                        showHideFragment(mFragments[SECOND]);
+//                        break;
+//                    case R.id.menu_item_map:
+//                        showHideFragment(mFragments[THIRD]);
+//                        break;
+//                    case R.id.menu_item_collection:
+//                        showHideFragment(mFragments[FOURTH]);
+//                        break;
+//                    case R.id.menu_item_lineup:
+//                        showHideFragment(mFragments[FIFTH]);
+//                        break;
+//                }
+//                return true;
+//            }
+//        });
         //设置地图为默认选取
-        bottomNavigationView.setSelectedItemId(R.id.menu_item_map);
+        //bottomNavigationView.setSelectedItemId(R.id.menu_item_map);
 
-
-        if (RESTORE_ITEM_ID != 0)
-            bottomNavigationView.setSelectedItemId(RESTORE_ITEM_ID);
+//        if (RESTORE_ITEM_ID != 0)
+//            bottomNavigationView.setSelectedItemId(RESTORE_ITEM_ID);
 
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        RESTORE_ITEM_ID = bottomNavigationView.getSelectedItemId();
+       // RESTORE_ITEM_ID = bottomNavigationView.getSelectedItemId();
     }
 
     @Override

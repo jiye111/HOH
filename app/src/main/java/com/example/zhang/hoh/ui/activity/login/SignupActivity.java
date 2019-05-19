@@ -48,7 +48,7 @@ public class SignupActivity extends BaseMVPCompatActivity<SignupContract.SignupP
        mPresenter.pSignup();
     }
 
-    @OnClick(R.id.login_signup_back_btn)
+    @OnClick(R.id.login_signup_back_iv)
     public void backToSignin(){
         finish();
     }

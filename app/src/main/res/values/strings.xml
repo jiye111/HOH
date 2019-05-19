@@ -56,11 +56,17 @@
     <string name="Local_Specialty">本地特色</string>
     <string name="Recommended_Restaurant">特色餐厅</string>
     <string name="Local">位置</string>
+    <string name="Local_">位置:</string>
     <string name="Introduce">介绍</string>
     <string name="Sight">风景</string>
     <string name="Parking">停车场</string>
     <string name="information">信息</string>
     <string name="Service">服务</string>
     <string name="Open_Time">营业时间</string>
+    <string name="Open_Time_">营业时间:</string>
+    <string name="Ticket_">票价:</string>
     <string name="All_Day">全天</string>
+    <string name="Queueing_time">等候时间</string>
+    <string name="minutes">分钟</string>
+    <string name="more">更多+</string>
 </resources>

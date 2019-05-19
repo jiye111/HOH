@@ -58,10 +58,16 @@
     <string name="Local_Specialty">Local Specialty</string>
     <string name="Recommended_Restaurant">Recommended Restaurant</string>
     <string name="Local">Local</string>
+    <string name="Local_">Local:</string>
+    <string name="Ticket_">Ticket:</string>
     <string name="Introduce">Introduce</string>
     <string name="Sight">Sight</string>
     <string name="Parking">Parking</string>
     <string name="Service">Service</string>
     <string name="Open_Time">Opening time</string>
+    <string name="Open_Time_">Opening time:</string>
     <string name="All_Day">All day</string>
+    <string name="Queueing_time">Queueing time</string>
+    <string name="minutes">minutes</string>
+    <string name="more">more+</string>
 </resources>

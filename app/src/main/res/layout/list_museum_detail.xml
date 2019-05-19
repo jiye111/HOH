@@ -1,46 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
-
-    <ImageView
-        android:id="@+id/list_museum_detail_bg_iv"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@color/toolbar_bg" />
-
-    <ImageButton
-        android:id="@+id/list_scenery_detail_back_btn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/left_arraw"
-        android:padding="10dp"
-        android:visibility="visible" />
-
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/list_museum_detail_bg_iv"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="200dp"
+            />
+
+        <ImageButton
+            android:id="@+id/list_museum_detail_back_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/left_arraw"
+            android:padding="10dp"
+            android:visibility="visible" />
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="00dp"
-            android:layout_height="match_parent">
-            
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                
+                android:layout_height="wrap_content"
+                android:background="@color/toolbar_bg">
+
                 <ImageView
                     android:id="@+id/list_museum_detail_avater_iv"
                     android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/list_museum_detail_avater_iv"
+                    android:text="浙江省博物馆"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_queueing_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_museum_detail_name_tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/list_museum_detail_avater_iv"
+                    android:text="@string/Queueing_time" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_queueing_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_museum_detail_name_tv"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/list_museum_detail_queueing_time"
+                    android:text="10" />
+
+
+                <ImageView
+                    android:id="@+id/list_museum_detail_collected_iv"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@+id/list_museum_detail_avater_iv"
+                    android:layout_marginRight="20dp"
+
+                    android:background="@drawable/list_museum_collection" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/list_museum_detail_opening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_height="80dp" />
-                
+                    android:text="@string/Open_Time_"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_opening_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"
+
+                    android:layout_toRightOf="@id/list_museum_detail_opening"
+                    android:text="周一—周日：8：00-16：00" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_museum_detail_opening"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/Local_"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_location_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_museum_detail_opening"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+
+                    android:layout_toRightOf="@id/list_museum_detail_location"
+                    android:text="浙江省杭州市西湖区孤山路25号" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_ticket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_museum_detail_location"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/Ticket_"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/list_museum_detail_ticket_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list_museum_detail_location"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+
+                    android:layout_toRightOf="@id/list_museum_detail_ticket"
+                    android:text="免费" />
+
+
             </RelativeLayout>
-            
+
+          <com.example.zhang.hoh.widget.ConflictAMap
+              android:id="@+id/list_museum_map"
+              android:layout_width="match_parent"
+              android:layout_height="150dp"></com.example.zhang.hoh.widget.ConflictAMap>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/Introduce"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/list_museum_detail_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:text="浙江省博物馆位于浙江省杭州市西湖区，始建于1929年，原名“浙江省立西湖博物馆”，是浙江省内最大的集收藏、陈列、研究于一体的综合性人文科学博物馆，馆藏文物达十万余件。
+1993年，浙江省博物馆改扩建工程竣工，新馆占地20400 平方米，建筑面积7360平方米，新增历史文物馆、青瓷馆、书画馆、钱币馆、吕霞光艺术馆、常书鸿美术馆、明清家具馆等十个展馆。馆舍建筑以富有江南地域特色的单体建筑和连廊组合而成，形成了“园中馆，馆中园”的独特格局。" />
+
+            <TextView
+                android:id="@+id/list_museum_detail_introduce_more_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="10dp"
+                android:text="@string/more"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/dottedline" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/information"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Service"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/lsit_scenery_park" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:text="@string/Parking"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/dottedline" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/Open_Time"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/All_Day"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/dottedline" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/Sight"
+                android:textSize="15sp" />
+
+            <com.youth.banner.Banner
+                android:id="@+id/list_museum_detail_banner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"></com.youth.banner.Banner>
+
+
         </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+    </FrameLayout>
+
+
+
+</ScrollView>

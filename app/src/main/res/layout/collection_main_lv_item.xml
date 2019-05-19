@@ -10,15 +10,14 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/personal_main_block_bg">
+        >
 
         <ImageView
             android:id="@+id/collection_main_lv_item_bg_iv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:background="@drawable/fruit"
-            android:src="@drawable/fruit" />
+           />
 
         <TextView
             android:id="@+id/collection_main_lv_item_name_tv"

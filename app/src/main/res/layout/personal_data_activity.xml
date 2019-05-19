@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="Nakamura Sakura" />
+                android:text="王林" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -132,7 +132,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="Female" />
+                android:text="女" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -175,7 +175,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="Japan" />
+                android:text="中国" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -259,7 +259,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="2009-02-01" />
+                android:text="1997-12-10" />
 
             <ImageView
                 android:layout_width="20dp"

@@ -80,8 +80,10 @@ public class listFoodLocalAdapter extends RecyclerView.Adapter<listFoodLocalAdap
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position=viewHolder.getLayoutPosition();
-                mListener.onItemClickListentr(viewHolder.itemView,position);
+                if (mListener!=null){
+                    int position=viewHolder.getLayoutPosition();
+                    mListener.onItemClickListentr(viewHolder.itemView,position);
+                }
             }
         });
     }

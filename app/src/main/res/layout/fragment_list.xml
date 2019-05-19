@@ -35,8 +35,8 @@
         android:visibility="gone">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:background="@drawable/left_arraw" />
@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
+            android:textSize="16sp"
             android:text="@string/Recommend" />
     </LinearLayout>
 
@@ -91,23 +92,12 @@
             android:background="@drawable/list_search" />
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="10dp"
+             />
 
-        <ImageButton
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="10dp"
-            android:background="@mipmap/ic_launcher_round" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/list_main_bottom_normal"
@@ -220,6 +210,7 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="@string/Awesome_list"
+                android:layout_gravity="center"
                 android:textSize="15sp" />
 
             <ImageView
@@ -227,7 +218,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/list_food_more" />
 
@@ -237,6 +229,7 @@
             android:id="@+id/list_main_bottom_in_food_awesome_banner"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+
             android:layout_width="match_parent"
             android:layout_height="150dp"></com.youth.banner.Banner>
 
@@ -253,6 +246,7 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="@string/Local_Specialty"
+                android:layout_gravity="center"
                 android:textSize="15sp" />
 
             <ImageView
@@ -260,7 +254,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
                 android:background="@drawable/list_food_more" />
 
         </LinearLayout>
@@ -283,13 +278,16 @@
                 android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="@string/Recommended_Restaurant"
+                android:layout_gravity="center"
                 android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/list_main_bottom_in_food_recommend_more"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="3dp"
                 android:background="@drawable/list_food_more" />
 
         </LinearLayout>

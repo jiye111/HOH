@@ -50,30 +50,30 @@ public class LineupFragment extends BaseMVPCompatFragment<LineupContract.LineupP
         super.initData();
         lvData= new ArrayList<lineupMainListViewBean>();
         lineupMainListViewBean bean1=new lineupMainListViewBean();
-        bean1.setImg(R.drawable.lineup_img_one);
+        bean1.setImg(R.drawable.list_food_one);
         bean1.setLocal("淮海南路22号");
         bean1.setMealNumber("2");
         bean1.setMealTime("2019.3.3 19:22");
-        bean1.setName("老张烧烤");
-        bean1.setOrderTime("2019.2.2 12:22");
+        bean1.setName("东坡酒家");
+        bean1.setOrderTime("2019.3.2 12:22");
         lvData.add(bean1);
 
         lineupMainListViewBean bean2=new lineupMainListViewBean();
-        bean2.setImg(R.drawable.lineup_img_one);
-        bean2.setLocal("淮海南路22号");
+        bean2.setImg(R.drawable.list_food_rv_one);
+        bean2.setLocal("留和路223号");
         bean2.setMealNumber("2");
-        bean2.setMealTime("2019.3.3 19:22");
-        bean2.setName("老张烧烤");
-        bean2.setOrderTime("2019.2.2 12:22");
+        bean2.setMealTime("2019.3.4 20:00");
+        bean2.setName("吉祥餐厅");
+        bean2.setOrderTime("2019.3.2 12:22");
         lvData.add(bean2);
 
         lineupMainListViewBean bean3=new lineupMainListViewBean();
-        bean3.setImg(R.drawable.lineup_img_one);
-        bean3.setLocal("淮海南路22号");
+        bean3.setImg(R.drawable.list_food_three);
+        bean3.setLocal("环城北路218号");
         bean3.setMealNumber("2");
-        bean3.setMealTime("2019.3.3 19:22");
+        bean3.setMealTime("2019.3.5 12:30");
         bean3.setName("老张烧烤");
-        bean3.setOrderTime("2019.2.2 12:22");
+        bean3.setOrderTime("2019.3.1 12:00");
         lvData.add(bean3);
 
     }

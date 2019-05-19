@@ -31,7 +31,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="8dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:background="@drawable/lineup_main_write"
             android:visibility="visible" />
     </RelativeLayout>
 <FrameLayout
@@ -47,6 +47,7 @@
         <ListView
             android:id="@+id/lineup_main_lv"
             android:layout_width="match_parent"
+            android:divider="@null"
             android:layout_height="match_parent"></ListView>
 
 
